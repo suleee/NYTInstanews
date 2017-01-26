@@ -1,0 +1,66 @@
+@import 'variable';
+@import 'reset';
+@import 'fonts';
+
+
+body {
+  background-color: black;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: 'open_sanslight', sans-serif;
+  height: 100vh;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.logo-n-selector {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 88vh;
+  flex: 1;
+}
+
+p.selection {
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+select {
+  font-size: 1.1rem;
+}
+
+footer {
+  align-content: center;
+  text-align: center;
+  color: #c2c2c2;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+  height: 5rem;
+}
+
+span.instanews {
+  text-transform: uppercase;
+}
+
+// @mixin desktop {
+//   @media (min-width: $tablet-width) {
+//     @content;
+//   }
+// }
+//
+// @mixin desktop {
+//   @media (min-width: $desktop-width) {
+//     @content;
+//   }
+// }
