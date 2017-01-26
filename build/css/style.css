@@ -100,9 +100,21 @@ div.logo-n-selector {
   height: 88vh;
   -ms-flex: 1;
       flex: 1; }
+  @media (min-width: 600px) {
+    div.logo-n-selector {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      text-align: center;
+      height: 88vh;
+      -ms-flex: 1;
+          flex: 1; } }
 
 p.selection {
-  padding: 1rem;
+  padding: 1.1rem;
   font-size: 0.8rem; }
 
 select {
@@ -116,6 +128,9 @@ footer {
   margin-bottom: 0rem;
   font-size: 0.9rem;
   height: 5rem; }
+
+.apicopyright {
+  margin-top: 1rem; }
 
 span.instanews {
   text-transform: uppercase; }

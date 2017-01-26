@@ -1,6 +1,7 @@
 @import 'variable';
 @import 'reset';
 @import 'fonts';
+@import 'mixins';
 
 
 body {
@@ -29,10 +30,23 @@ div.logo-n-selector {
   text-align: center;
   height: 88vh;
   flex: 1;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 88vh;
+    flex: 1;
+  }
+
+  @include desktop {
+
+  }
 }
 
 p.selection {
-  padding: 1rem;
+  padding: 1.1rem;
   font-size: 0.8rem;
 }
 
@@ -49,18 +63,10 @@ footer {
   height: 5rem;
 }
 
+.apicopyright {
+  margin-top: 1rem;
+}
+
 span.instanews {
   text-transform: uppercase;
 }
-
-// @mixin desktop {
-//   @media (min-width: $tablet-width) {
-//     @content;
-//   }
-// }
-//
-// @mixin desktop {
-//   @media (min-width: $desktop-width) {
-//     @content;
-//   }
-// }
