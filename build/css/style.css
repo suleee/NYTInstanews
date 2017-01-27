@@ -138,3 +138,27 @@ p.selection {
   @media (min-width: 1000px) {
     p.selection {
       font-size: 1rem; } }
+
+select {
+  font-size: 1.1rem; }
+
+footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  color: #c2c2c2;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+  height: 5rem; }
+  @media (min-width: 1000px) {
+    footer {
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      padding-left: 2rem; } }
+
+.apicopyright {
+  margin-top: 1rem; }
+
+span.instanews {
+  text-transform: uppercase; }
