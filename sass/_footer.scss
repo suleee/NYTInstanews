@@ -1,0 +1,28 @@
+footer {
+
+  display: flex;
+  justify-content: center;
+  color: #c2c2c2;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+  height: 5rem;
+
+  @include desktop {
+
+    justify-content: flex-start;
+    padding-left: 2rem;
+
+  }
+}
+
+select {
+  font-size: 1.1rem;
+}
+
+.apicopyright {
+  margin-top: 1rem;
+}
+
+span.instanews {
+  text-transform: uppercase;
+}
