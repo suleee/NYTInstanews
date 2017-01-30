@@ -2,7 +2,7 @@ var gulp = require('gulp'); // Load Gulp!
 // Now that we've installed the uglify package we can require it:
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
     eslint = require('gulp-eslint'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -44,6 +44,8 @@ gulp.task('lint', function() {
         .pipe(eslint.failAfterError());
 });
 
+
+
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
       .pipe(sass())
@@ -56,8 +58,7 @@ gulp.task('sass', function() {
       .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('default', ['lint'], function () {
-});
+
 
 gulp.task('watch', function() {
    gulp.watch('js/*.js', ['scripts']);
