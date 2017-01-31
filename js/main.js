@@ -43,7 +43,6 @@ $(document).ready(function() {
             }
           })
           $('.article-list').append(list);
-
       } else {
         $('.articles').append("<h1>There are no articles for this topic sorry!</h1>")
       }
