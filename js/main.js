@@ -1,41 +1,53 @@
 $(document).ready(function() {
- var list= '';
+
+
   $('select').on('change', function(event) {
     event.preventDefault()
-    var userSelect = $('.topics').val()
+    var list= '';
+    var userSelect = $('.topics').val();
+    $('.article-list').empty();
+
 
     $.ajax({
       method:'GET',
       url:'http://api.nytimes.com/svc/topstories/v2/' + userSelect + '.json?api-key=ea765f54b5984dd9a7ec3fd93101fdcc',
     }).done(function(data){
-      console.log(data);
-      $('.article-list').empty()
-      if (data.results.length) {
+
+        if (data.results.length ) {
+
+          $.each(data.results, function (index, results) {
+            var articleUrl = results.url;
+            var abstract = results.abstract;
+
+            if(results.multimedia.length > 0){
+              var articleImage = results.multimedia[4].url;
 
 
-        $.each(data.results, function (index, results) {
-          console.log('Got result')
+                list += '<li>';
+                list +=       '<a href=';
+                list +=             articleUrl;
+                list +=         ' target="_blank">';
+                list +=             '<div class="img-wrap">';
+                list +=               '<img src="';
+                list +=               articleImage;
+                list +=               '" alt="image"/>';
+                list +=             '</div>';
+                list +=             '<div class="text-wrap">';
+                list +=               '<p>';
+                list +=               abstract;
+                list +=               '</p>';
+                list +=             '</div>';
+                list +=       '</a>';
+                list +=  '</li>';
 
-          if(results.multimedia.length){
-              list += '<div class="article-list"><li><a href="' + results.url +'"  <p>' + results.abstract + '</p><img src="' + results.multimedia[4].url + '"/></li></div>'
-          }
-        })
+            }
+          })
+          $('.article-list').append(list);
 
-        $('.topics')
-        // console.log(index);
-        // console.log(results);
-
-        // $('.article-list').append('<div class="article-list"><li><a href="' + results.url +'"  <p>' + results.abstract + '</p><img src="' + results.multimedia[4].url + '"/></li></div>');
-        //  })
-
-          //get the abstract,
-          //get the imageurl
-          //only get news with images using if statement
+      } else {
+        $('.articles').append("<h1>There are no articles for this topic sorry!</h1>")
       }
-      else {
-        $('.article-list').append('Sorry no articles on this subject today!')
-        // handle no results
-      }
+
     })
 
   })
